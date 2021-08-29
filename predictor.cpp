@@ -56,8 +56,9 @@ int strtoint(string s){
 }
 string inttostr(int x){
 	string res="";
+	int neg=0;
 	if(x<0){
-		res+="-";
+		neg=1;
 		x=-x;
 	}
 	while(x){
@@ -65,6 +66,7 @@ string inttostr(int x){
 		x/=10;
 	}
 	reverse(res.begin(),res.end());
+	if(neg) res="-"+res;
 	return res;
 }
 struct JsonScanner{
